@@ -18,6 +18,24 @@ CREATE TABLE Flights (
 );
 
 
+CREATE TABLE Aircraft (
+                          AircraftID INT AUTO_INCREMENT PRIMARY KEY,
+                          AircraftName VARCHAR(100),
+                          TotalSeats INT
+);
+
+
+
+CREATE TABLE CustomerFlights (
+                                 CustomerFlightID INT AUTO_INCREMENT PRIMARY KEY,
+                                 FlightID INT,
+                                 AircraftID INT,
+                                 FOREIGN KEY (FlightID) REFERENCES Flights(Flight_id),
+                                 FOREIGN KEY (AircraftID) REFERENCES Aircraft(AircraftID)
+);
+
+
+
 CREATE TABLE Bookings (
                           Booking_id int PRIMARY KEY,
                           Customer_id INT,
@@ -44,6 +62,14 @@ VALUES
     ('3','DL53', 'Boeing 777', 264, 2078),
     ('4', 'DL222', 'Boeing 777', 264, 1765),
     ('5', 'DL37', 'Boeing 747', 400, 531);
+
+
+
+INSERT INTO Aircraft (AircraftName, TotalSeats)
+VALUES
+    ('Boeing 747', 400),
+    ('Airbus A330', 236),
+    ('Boeing 777', 264);
 
 
 
