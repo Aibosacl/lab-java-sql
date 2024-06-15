@@ -1,3 +1,5 @@
+# Exercise 2
+
 CREATE DATABASE airline_db;
 
 USE airline_db;
@@ -88,8 +90,9 @@ VALUES
     ('11', '7', '4'),
     ('12', '8', '4');
 
+# exercise 3
 SELECT COUNT(*) AS TotalFlights FROM Flights;
-
+# exercise 4
 SELECT AVG(Flight_Mileage) AS AverageFlightDistance FROM Flights;
 
 SELECT AVG(Aircraft_seats) AS AverageSeats FROM Flights;
